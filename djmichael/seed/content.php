@@ -522,6 +522,7 @@ return array(
 						),
 					),
 				),
+				array( 'acf/contact-cta' ),
 			),
 		),
 		'contact' => array(
@@ -554,6 +555,45 @@ return array(
 						'intro' => 'People I work with often and recommend without hesitation.',
 					),
 				),
+				array(
+					'acf/vendors',
+					array(
+						'items' => array(
+							array(
+								'category' => 'Planning',
+								'name'     => 'Charlie Quinn Weddings',
+								'url'      => 'https://charliequinnweddings.com',
+							),
+							array(
+								'category' => 'Photography',
+								'name'     => 'Sarah Gagnon Photography',
+								'url'      => 'https://sarahgagnonphotography.com',
+							),
+							array(
+								'category' => 'Video',
+								'name'     => 'Fisher Video Productions',
+								'url'      => 'https://fishervideoproductions.com',
+							),
+							array(
+								'category' => 'Venue',
+								'name'     => 'Moonlit Ridge Estate',
+								'place'    => 'Otisfield, ME',
+								'url'      => 'https://moonlitridge.com',
+							),
+							array(
+								'category' => 'Catering',
+								'name'     => 'Black Tie Catering and Events',
+								'url'      => 'https://instagram.com/blacktiecateringandevents',
+							),
+							array(
+								'category' => 'Officiant',
+								'name'     => 'Officially Yours',
+								'url'      => 'https://officiallyyours.info',
+							),
+						),
+					),
+				),
+				array( 'acf/contact-cta' ),
 			),
 		),
 	),

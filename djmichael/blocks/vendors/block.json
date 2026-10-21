@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "acf/vendors",
+	"title": "Vendors",
+	"description": "Preferred vendors, grouped by what they do, each linking to their site.",
+	"category": "djmichael",
+	"icon": "groups",
+	"keywords": [ "vendors", "partners", "recommended" ],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"supports": {
+		"anchor": true,
+		"align": false,
+		"html": false,
+		"multiple": false
+	}
+}

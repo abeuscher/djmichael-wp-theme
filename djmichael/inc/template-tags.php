@@ -79,3 +79,13 @@ function djm_stats( $rows, $class = '' ) {
 	}
 	return $out . '</dl>';
 }
+
+/**
+ * A URL as link text, the way the prototype shows it: no scheme, no
+ * trailing slash. "https://example.com/path/" becomes "example.com/path".
+ *
+ * @param string $url Full URL.
+ */
+function djm_link_label( $url ) {
+	return rtrim( preg_replace( '#^https?://#i', '', (string) $url ), '/' );
+}
