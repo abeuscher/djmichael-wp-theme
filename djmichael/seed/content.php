@@ -17,6 +17,134 @@ return array(
 			'file' => 'hero-couple-dancing.jpg',
 			'alt'  => 'A bride and groom dancing in a pool of warm light, surrounded by guests on a crowded dance floor',
 		),
+		'img_2109_poster' => array(
+			'file' => 'img-2109-poster.jpg',
+			'alt'  => 'Video: Guests with their hands up on a packed dance floor',
+		),
+		'img_2109' => array(
+			'file' => 'img-2109.mp4',
+		),
+		'guests_laughing' => array(
+			'file' => 'guests-laughing-800.jpg',
+			'alt'  => 'Guests laughing and dancing',
+		),
+		'img_3747_poster' => array(
+			'file' => 'img-3747-poster.jpg',
+			'alt'  => 'Video: Dancing under a string-lit tent',
+		),
+		'img_3747' => array(
+			'file' => 'img-3747.mp4',
+		),
+		'bride_dancing' => array(
+			'file' => 'bride-dancing-800.jpg',
+			'alt'  => 'The bride dancing with her guests',
+		),
+		'uplit_hall_red' => array(
+			'file' => 'uplit-hall-red-1600.jpg',
+			'alt'  => 'A reception hall with red uplighting and a full dance floor',
+		),
+		'img_3729_poster' => array(
+			'file' => 'img-3729-poster.jpg',
+			'alt'  => 'Video: A full dance floor in a timber-frame barn',
+		),
+		'img_3729' => array(
+			'file' => 'img-3729.mp4',
+		),
+		'crowd_lift' => array(
+			'file' => 'crowd-lift-800.jpg',
+			'alt'  => 'Guests lifting a friend overhead on the dance floor',
+		),
+		'tie_dance' => array(
+			'file' => 'tie-dance-800.jpg',
+			'alt'  => 'Two guests dancing, one with a tie around his head',
+		),
+		'friends_dancing' => array(
+			'file' => 'friends-dancing-800.jpg',
+			'alt'  => 'Friends dancing together',
+		),
+		'img_2105_poster' => array(
+			'file' => 'img-2105-poster.jpg',
+			'alt'  => 'Video: A crowded dance floor at a reception',
+		),
+		'img_2105' => array(
+			'file' => 'img-2105.mp4',
+		),
+		'all_ages_dancing' => array(
+			'file' => 'all-ages-dancing-800.jpg',
+			'alt'  => 'Guests of all ages on the dance floor',
+		),
+		'img_3570_poster' => array(
+			'file' => 'img-3570-poster.jpg',
+			'alt'  => 'Video: A videographer filming the dance floor',
+		),
+		'img_3570' => array(
+			'file' => 'img-3570.mp4',
+		),
+		'couple_on_the_floor' => array(
+			'file' => 'couple-on-the-floor-800.jpg',
+			'alt'  => 'The couple dancing in the middle of their guests',
+		),
+		'img_3605_poster' => array(
+			'file' => 'img-3605-poster.jpg',
+			'alt'  => 'Video: Dancing under disco balls and draped fabric',
+		),
+		'img_3605' => array(
+			'file' => 'img-3605.mp4',
+		),
+		'spotlight_dance' => array(
+			'file' => 'spotlight-dance-800.jpg',
+			'alt'  => 'The couple dancing in a spotlight, surrounded by guests',
+		),
+		'img_3748_poster' => array(
+			'file' => 'img-3748-poster.jpg',
+			'alt'  => 'Video: Guests dancing under a purple-lit tent',
+		),
+		'img_3748' => array(
+			'file' => 'img-3748.mp4',
+		),
+		'uplit_ballroom_purple' => array(
+			'file' => 'uplit-ballroom-purple-1600.jpg',
+			'alt'  => 'A ballroom with purple uplighting, seen from above',
+		),
+		'img_3879_poster' => array(
+			'file' => 'img-3879-poster.jpg',
+			'alt'  => 'Video: Dancing in a barn with string lights',
+		),
+		'img_3879' => array(
+			'file' => 'img-3879.mp4',
+		),
+		'uplit_hall_blue' => array(
+			'file' => 'uplit-hall-blue-1600.jpg',
+			'alt'  => 'A hall with blue uplighting and glow sticks on the dance floor',
+		),
+		'img_4029_poster' => array(
+			'file' => 'img-4029-poster.jpg',
+			'alt'  => 'Video: Hands in the air on a crowded dance floor',
+		),
+		'img_4029' => array(
+			'file' => 'img-4029.mp4',
+		),
+		'img_4036_poster' => array(
+			'file' => 'img-4036-poster.jpg',
+			'alt'  => 'Video: A dance floor lit in blue',
+		),
+		'img_4036' => array(
+			'file' => 'img-4036.mp4',
+		),
+		'img_4167_poster' => array(
+			'file' => 'img-4167-poster.jpg',
+			'alt'  => 'Video: An uplit tent with cocktail tables at night',
+		),
+		'img_4167' => array(
+			'file' => 'img-4167.mp4',
+		),
+		'img_1612_poster' => array(
+			'file' => 'img-1612-poster.jpg',
+			'alt'  => 'Video: Michael at the DJ booth during a reception',
+		),
+		'img_1612' => array(
+			'file' => 'img-1612.mp4',
+		),
 	),
 
 	'options' => array(
@@ -103,6 +231,74 @@ return array(
 								'name'   => 'Name',
 								'date'   => 'Month 2026',
 								'source' => 'The Knot',
+							),
+						),
+					),
+				),
+				array(
+					'acf/gallery',
+					array(
+						'title'   => 'Pictures and video',
+						'visible' => 8,
+						'items'   => array(
+							array(
+								'image' => '@media:img_2109_poster',
+								'video' => '@media:img_2109',
+							),
+							array( 'image' => '@media:guests_laughing' ),
+							array(
+								'image' => '@media:img_3747_poster',
+								'video' => '@media:img_3747',
+							),
+							array( 'image' => '@media:bride_dancing' ),
+							array( 'image' => '@media:uplit_hall_red' ),
+							array(
+								'image' => '@media:img_3729_poster',
+								'video' => '@media:img_3729',
+							),
+							array( 'image' => '@media:crowd_lift' ),
+							array( 'image' => '@media:tie_dance' ),
+							array( 'image' => '@media:friends_dancing' ),
+							array(
+								'image' => '@media:img_2105_poster',
+								'video' => '@media:img_2105',
+							),
+							array( 'image' => '@media:all_ages_dancing' ),
+							array(
+								'image' => '@media:img_3570_poster',
+								'video' => '@media:img_3570',
+							),
+							array( 'image' => '@media:couple_on_the_floor' ),
+							array(
+								'image' => '@media:img_3605_poster',
+								'video' => '@media:img_3605',
+							),
+							array( 'image' => '@media:spotlight_dance' ),
+							array(
+								'image' => '@media:img_3748_poster',
+								'video' => '@media:img_3748',
+							),
+							array( 'image' => '@media:uplit_ballroom_purple' ),
+							array(
+								'image' => '@media:img_3879_poster',
+								'video' => '@media:img_3879',
+							),
+							array( 'image' => '@media:uplit_hall_blue' ),
+							array(
+								'image' => '@media:img_4029_poster',
+								'video' => '@media:img_4029',
+							),
+							array(
+								'image' => '@media:img_4036_poster',
+								'video' => '@media:img_4036',
+							),
+							array(
+								'image' => '@media:img_4167_poster',
+								'video' => '@media:img_4167',
+							),
+							array(
+								'image' => '@media:img_1612_poster',
+								'video' => '@media:img_1612',
 							),
 						),
 					),

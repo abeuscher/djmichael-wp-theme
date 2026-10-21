@@ -1,0 +1,110 @@
+{
+    "key": "group_djm_block_gallery",
+    "title": "Block: Gallery and slideshow",
+    "fields": [
+        {
+            "key": "field_djm_gallery_title",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "Leave empty for \"Pictures and video\".",
+            "required": 0,
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_djm_gallery_visible",
+            "label": "Tiles shown",
+            "name": "visible",
+            "type": "number",
+            "instructions": "How many show in the grid. The rest open from \"View all\".",
+            "required": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 8,
+            "min": 1,
+            "max": 0,
+            "step": 1
+        },
+        {
+            "key": "field_djm_gallery_items",
+            "label": "Photos and videos",
+            "name": "items",
+            "type": "repeater",
+            "instructions": "The order here is the order in the grid and the slideshow.",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "button_label": "Add item",
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_djm_gallery_item_image",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "The tile. For a video this is also its poster frame. Its alt text is used in the slideshow.",
+                    "required": 1,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "mime_types": "jpg, jpeg, png, webp, avif",
+                    "parent_repeater": "field_djm_gallery_items"
+                },
+                {
+                    "key": "field_djm_gallery_item_video",
+                    "label": "Video",
+                    "name": "video",
+                    "type": "file",
+                    "instructions": "Optional MP4. With one set, the tile gets a play badge and opens as video.",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "mime_types": "mp4",
+                    "parent_repeater": "field_djm_gallery_items"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/gallery"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1761000000
+}
