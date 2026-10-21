@@ -455,6 +455,73 @@ return array(
 						'title' => 'Frequently asked questions',
 					),
 				),
+				array(
+					'acf/faq',
+					array(
+						'items' => array(
+							array(
+								'question' => 'Will you be our DJ, or someone from your company?',
+								'answer'   => '<p>Me. When you book DJ Michael, I\'m the one who shows up. I keep a network of DJs I trust for true emergencies only.</p>',
+							),
+							array(
+								'question' => 'How far ahead should we book?',
+								'answer'   => '<p>Most couples book 1–2 years out. If your date is closer, ask anyway.</p>',
+							),
+							array(
+								'question' => 'What areas do you cover?',
+								'answer'   => '<p>Greater Boston, the Portland, Maine area and the rest of New England.</p>',
+							),
+							array(
+								'question' => 'How does booking work?',
+								'answer'   => '<p>Send the form or email me. If I\'m available, we\'ll set up a call. I\'ll email a contract, and a one-third deposit holds your date.</p>',
+							),
+							array(
+								'question' => 'What if you\'re already booked?',
+								'answer'   => '<p>I\'ll tell you right away and, if you\'d like, recommend someone I trust.</p>',
+							),
+							array(
+								'question' => 'Can we choose songs and make a do-not-play list?',
+								'answer'   => '<p>Absolutely, from the prelude before the ceremony to the last song of the night. My wedding planner makes it easy to list key songs, must-plays and do-not-plays.</p>',
+							),
+							array(
+								'question' => 'Do you take requests from guests?',
+								'answer'   => '<p>Yes, and I check them against your preferences so the night stays yours.</p>',
+							),
+							array(
+								'question' => 'Do you mix?',
+								'answer'   => '<p>Yes. Song selection comes first, and then I blend tracks so the floor never loses momentum.</p>',
+							),
+							array(
+								'question' => 'Can you work with live musicians?',
+								'answer'   => '<p>Yes. I\'ve shared the stage with soloists, saxophonists and a marching band, and I\'ll coordinate sound and timing with them.</p>',
+							),
+							array(
+								'question' => 'Can you cover the ceremony and cocktail hour in different spaces?',
+								'answer'   => '<p>Yes. I bring separate systems for each area, with wireless and lapel mics.</p>',
+							),
+							array(
+								'question' => 'What if there\'s no power at the site?',
+								'answer'   => '<p>I\'ve run weddings off generators, and I have my own battery power for ceremonies and cocktail hours.</p>',
+							),
+							array(
+								'question' => 'Do you have insurance?',
+								'answer'   => '<p>Yes, a $1 million commercial policy. I\'ll provide a certificate of insurance for your venue on request.</p>',
+							),
+							array(
+								'question' => 'What do you wear?',
+								'answer'   => '<p>Whatever suits your event, a suit by default. Tell me if you\'d like something more or less formal.</p>',
+							),
+							array(
+								'question' => 'What equipment do you use, and do you bring backup?',
+								'answer'   => '<p>Professional JBL and QSC sound systems, with a full backup on site at every event. The volume is set for the room: full on the dance floor, comfortable at the tables.</p>',
+							),
+							array(
+								'question' => 'Can we reach you while we plan?',
+								'answer'   => '<p>Please do. Email me anytime. I answer quickly.</p>',
+							),
+						),
+					),
+				),
 			),
 		),
 		'contact' => array(
