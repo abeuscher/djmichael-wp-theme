@@ -1,0 +1,130 @@
+{
+    "key": "group_djm_block_hero",
+    "title": "Block: Hero",
+    "fields": [
+        {
+            "key": "field_djm_hero_image",
+            "label": "Image",
+            "name": "image",
+            "type": "image",
+            "instructions": "Wide banner, darkened on the left for the text. 1920\u00d7600 or larger.",
+            "required": 1,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg, jpeg, png, webp, avif"
+        },
+        {
+            "key": "field_djm_hero_mobile_image",
+            "label": "Mobile image",
+            "name": "mobile_image",
+            "type": "image",
+            "instructions": "Optional. Used below 768px; otherwise the banner is cropped to the couple.",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg, jpeg, png, webp, avif"
+        },
+        {
+            "key": "field_djm_hero_video",
+            "label": "Background loop",
+            "name": "video",
+            "type": "file",
+            "instructions": "Optional muted loop (MP4). Not played for visitors who prefer reduced motion.",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "mime_types": "mp4"
+        },
+        {
+            "key": "field_djm_hero_eyebrow",
+            "label": "Eyebrow",
+            "name": "eyebrow",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_djm_hero_title",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_djm_hero_subhead",
+            "label": "Subhead",
+            "name": "subhead",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_djm_hero_button",
+            "label": "Button",
+            "name": "button",
+            "type": "link",
+            "instructions": "Leave empty to use the Contact page and the site-wide button label.",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/hero"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1761000000
+}

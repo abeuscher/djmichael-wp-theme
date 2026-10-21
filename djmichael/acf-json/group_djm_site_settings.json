@@ -1,0 +1,369 @@
+{
+    "key": "group_djm_site_settings",
+    "title": "Site settings",
+    "fields": [
+        {
+            "key": "field_djm_opt_tab_business",
+            "label": "Business",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_djm_opt_business_name",
+            "label": "Business name",
+            "name": "business_name",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "DJ Michael"
+        },
+        {
+            "key": "field_djm_opt_owner_name",
+            "label": "Owner name",
+            "name": "owner_name",
+            "type": "text",
+            "instructions": "Used in structured data.",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_djm_opt_tagline",
+            "label": "Header tagline",
+            "name": "tagline",
+            "type": "text",
+            "instructions": "Shown beside the wordmark on wide screens.",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_djm_opt_location",
+            "label": "Location line",
+            "name": "location",
+            "type": "text",
+            "instructions": "Footer, e.g. Boston and Portland, ME",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_djm_opt_email",
+            "label": "Email",
+            "name": "email",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_djm_opt_instagram_handle",
+            "label": "Instagram handle",
+            "name": "instagram_handle",
+            "type": "text",
+            "instructions": "With the @",
+            "required": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_djm_opt_instagram_url",
+            "label": "Instagram URL",
+            "name": "instagram_url",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_djm_opt_areas_served",
+            "label": "Areas served",
+            "name": "areas_served",
+            "type": "textarea",
+            "instructions": "One per line. Structured data only.",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_djm_opt_tab_contact",
+            "label": "Contact",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_djm_opt_cta_label",
+            "label": "Button label",
+            "name": "cta_label",
+            "type": "text",
+            "instructions": "Every primary call-to-action button.",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Contact me"
+        },
+        {
+            "key": "field_djm_opt_contact_page",
+            "label": "Contact page",
+            "name": "contact_page",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "return_format": "id",
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 1
+        },
+        {
+            "key": "field_djm_opt_booking_note",
+            "label": "Booking note",
+            "name": "booking_note",
+            "type": "textarea",
+            "instructions": "Shown beside the contact form and in closing contact bands.",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_djm_opt_tab_reviews",
+            "label": "Reviews",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_djm_opt_review_platforms",
+            "label": "Review platforms",
+            "name": "review_platforms",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "button_label": "Add platform",
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_djm_opt_rp_platform",
+                    "label": "Platform",
+                    "name": "platform",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_djm_opt_review_platforms"
+                },
+                {
+                    "key": "field_djm_opt_rp_rating",
+                    "label": "Rating",
+                    "name": "rating",
+                    "type": "text",
+                    "instructions": "e.g. 5.0",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "15",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_djm_opt_review_platforms"
+                },
+                {
+                    "key": "field_djm_opt_rp_count",
+                    "label": "Reviews",
+                    "name": "count",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "15",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_djm_opt_review_platforms"
+                },
+                {
+                    "key": "field_djm_opt_rp_url",
+                    "label": "Profile URL",
+                    "name": "url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_djm_opt_review_platforms"
+                }
+            ]
+        },
+        {
+            "key": "field_djm_opt_award_value",
+            "label": "Award value",
+            "name": "award_value",
+            "type": "text",
+            "instructions": "e.g. 16 years",
+            "required": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_djm_opt_award_label",
+            "label": "Award label",
+            "name": "award_label",
+            "type": "text",
+            "instructions": "e.g. Couples' Choice Award",
+            "required": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_djm_opt_award_source",
+            "label": "Award source",
+            "name": "award_source",
+            "type": "text",
+            "instructions": "e.g. WeddingWire",
+            "required": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_djm_opt_tab_analytics",
+            "label": "Analytics",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_djm_opt_ga4_id",
+            "label": "GA4 measurement ID",
+            "name": "ga4_id",
+            "type": "text",
+            "instructions": "e.g. G-XXXXXXXXXX. Not output on local installs.",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "djm-site-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1761000000
+}

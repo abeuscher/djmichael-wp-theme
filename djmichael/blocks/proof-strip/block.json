@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "acf/proof-strip",
+	"title": "Review counts",
+	"description": "Ratings and review counts per platform, plus the award. Edited in Site settings → Reviews.",
+	"category": "djmichael",
+	"icon": "star-filled",
+	"keywords": [ "reviews", "proof", "ratings" ],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"supports": {
+		"anchor": true,
+		"align": false,
+		"html": false,
+		"mode": false
+	}
+}
