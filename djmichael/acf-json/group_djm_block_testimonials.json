@@ -1,0 +1,116 @@
+{
+    "key": "group_djm_block_testimonials",
+    "title": "Block: Testimonials",
+    "fields": [
+        {
+            "key": "field_djm_testimonials_title",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "Leave empty for \"What couples say\".",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_djm_testimonials_quotes",
+            "label": "Quotes",
+            "name": "quotes",
+            "type": "repeater",
+            "instructions": "Short excerpts from reviews. Three reads best.",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "button_label": "Add quote",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_djm_testimonials_q_name",
+            "sub_fields": [
+                {
+                    "key": "field_djm_testimonials_q_text",
+                    "label": "Quote",
+                    "name": "text",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 1,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "rows": 3,
+                    "new_lines": "",
+                    "parent_repeater": "field_djm_testimonials_quotes"
+                },
+                {
+                    "key": "field_djm_testimonials_q_name",
+                    "label": "Name",
+                    "name": "name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "34",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_djm_testimonials_quotes"
+                },
+                {
+                    "key": "field_djm_testimonials_q_date",
+                    "label": "Date",
+                    "name": "date",
+                    "type": "text",
+                    "instructions": "e.g. Nov 2025",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_djm_testimonials_quotes"
+                },
+                {
+                    "key": "field_djm_testimonials_q_source",
+                    "label": "Source",
+                    "name": "source",
+                    "type": "text",
+                    "instructions": "e.g. WeddingWire",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_djm_testimonials_quotes"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/testimonials"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1761000000
+}

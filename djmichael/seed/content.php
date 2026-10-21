@@ -80,6 +80,33 @@ return array(
 					),
 				),
 				array( 'acf/proof-strip' ),
+				array(
+					'acf/testimonials',
+					array(
+						'title'  => 'What couples say',
+						// Placeholder excerpts: Michael chooses and approves the real ones.
+						'quotes' => array(
+							array(
+								'text'   => 'Our guests were dancing from the first song to the last, from our grandparents to our college friends. The energy never dropped all night.',
+								'name'   => 'Kasey',
+								'date'   => 'Nov 2025',
+								'source' => 'WeddingWire',
+							),
+							array(
+								'text'   => 'When the rain moved everything inside, Michael stayed completely calm and had us set up in minutes. The floor never emptied.',
+								'name'   => 'Mary',
+								'date'   => 'Jul 2026',
+								'source' => 'WeddingWire',
+							),
+							array(
+								'text'   => 'He listened to everything we asked for and read the room perfectly. Every announcement was on time, and people are still talking about the dancing.',
+								'name'   => 'Name',
+								'date'   => 'Month 2026',
+								'source' => 'The Knot',
+							),
+						),
+					),
+				),
 			),
 		),
 		'about'   => array(
