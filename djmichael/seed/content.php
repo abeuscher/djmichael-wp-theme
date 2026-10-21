@@ -21,6 +21,10 @@ return array(
 			'file' => 'fpo-michael-at-the-booth.jpg',
 			'alt'  => 'Michael at the DJ booth during a wedding reception',
 		),
+		'tent_cocktail_hour' => array(
+			'file' => 'tent-cocktail-hour-1200.jpg',
+			'alt'  => 'Cocktail hour under a tent at dusk',
+		),
 		'img_2109_poster' => array(
 			'file' => 'img-2109-poster.jpg',
 			'alt'  => 'Video: Guests with their hands up on a packed dance floor',
@@ -359,6 +363,39 @@ return array(
 								'title' => 'Dance.',
 								'text'  => 'I arrive early, work with your venue and vendors, and keep the day on time and the floor full.',
 							),
+						),
+					),
+				),
+				array(
+					'acf/services',
+					array(
+						'title' => 'Services',
+						'items' => array(
+							array(
+								'image' => '@media:tie_dance',
+								'title' => 'Reception DJ and MC',
+								'text'  => 'Music built around your taste, read live from the room. Announcements that are short, rehearsed and on time.',
+							),
+							array(
+								'image' => '@media:tent_cocktail_hour',
+								'title' => 'Ceremony and cocktail hour',
+								'text'  => 'Separate systems for each space, wireless and lapel mics, and battery power for sites without outlets.',
+							),
+							array(
+								'image' => '@media:uplit_ballroom_purple',
+								'title' => 'Lighting',
+								'text'  => 'Battery-powered LED uplighting in any color, for rooms and tents. Dance lighting is available too.',
+							),
+							array(
+								'image' => '@media:uplit_hall_blue',
+								'title' => 'Corporate and private events',
+								'text'  => 'The same gear and the same approach for company parties, milestones and celebrations.',
+							),
+						),
+						'link'  => array(
+							'title'  => 'Questions? Read the FAQ',
+							'url'    => '@page:faq',
+							'target' => '',
 						),
 					),
 				),

@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "acf/services",
+	"title": "Services",
+	"description": "What Michael offers, as cards with a photo, a title and a short description.",
+	"category": "djmichael",
+	"icon": "screenoptions",
+	"keywords": [ "services", "offer", "packages" ],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"supports": {
+		"anchor": true,
+		"align": false,
+		"html": false,
+		"multiple": false
+	}
+}
