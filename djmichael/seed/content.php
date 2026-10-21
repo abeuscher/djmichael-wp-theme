@@ -414,6 +414,32 @@ return array(
 						'title' => 'About Michael',
 					),
 				),
+				array(
+					'acf/about-bio',
+					array(
+						'photo'         => '@media:about_booth',
+						'support_photo' => '@media:spotlight_dance',
+						'bio'           => '<p>It started in high school, when a neighbor sold me his used equipment so I could DJ a school dance. I\'ve been playing music for people ever since.</p><p>I studied communications at UMass Amherst and spent my early career in Boston radio at WBCN and WBOS, producing, on air and in promotions. Radio taught me timing: when to talk, when to stay out of the way, and how to keep things moving.</p><p>For more than a decade I was a DJ and sound board operator for the Boston Bruins, including the 2011 Stanley Cup run. An arena gives you no second take. Everything happens on cue, live, in front of thousands of people.</p><p>Along the way I started MCO Productions, began hosting pub trivia, and wrote <cite>The Best Bar Trivia Book Ever</cite> (2014). Hosting a room every week is good practice for reading one.</p><p>But weddings have always been the heart of it. Over 25 years I\'ve played more than a thousand, about a hundred a year. My style is low-key on the mic and serious about the music: your requests, your do-not-plays, and the right next song to keep everyone dancing, from your grandparents to your college friends. Just as important, I help the day run smoothly, from the ceremony to the last song.</p><p>I was based in Boston for years, and in 2021 I added the Portland, Maine area. I still play greater Boston often and travel throughout New England.</p>',
+						'stats'         => array(
+							array(
+								'value' => '25',
+								'label' => 'years',
+							),
+							array(
+								'value' => '1,000+',
+								'label' => 'weddings',
+							),
+							array(
+								'value' => '286',
+								'label' => 'reviews',
+							),
+							array(
+								'value' => '16',
+								'label' => "Couples' Choice Awards",
+							),
+						),
+					),
+				),
 			),
 		),
 		'faq'     => array(

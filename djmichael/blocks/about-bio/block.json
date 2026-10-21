@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "acf/about-bio",
+	"title": "About (biography)",
+	"description": "The full biography for the About page: lead photo, the story, the numbers and a supporting photo.",
+	"category": "djmichael",
+	"icon": "id-alt",
+	"keywords": [ "about", "bio", "biography", "story" ],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"supports": {
+		"anchor": true,
+		"align": false,
+		"html": false,
+		"multiple": false
+	}
+}
