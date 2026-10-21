@@ -338,6 +338,30 @@ return array(
 						),
 					),
 				),
+				array(
+					'acf/what-to-expect',
+					array(
+						'title' => 'What to expect',
+						'steps' => array(
+							array(
+								'title' => 'Get in touch.',
+								'text'  => 'Send the form or email me with your date and venue.',
+							),
+							array(
+								'title' => 'Book.',
+								'text'  => "I'll send a contract; a one-third deposit holds the date.",
+							),
+							array(
+								'title' => 'Plan.',
+								'text'  => 'My wedding planner covers key songs, must-plays and do-not-plays. Then we walk through the timeline together.',
+							),
+							array(
+								'title' => 'Dance.',
+								'text'  => 'I arrive early, work with your venue and vendors, and keep the day on time and the floor full.',
+							),
+						),
+					),
+				),
 			),
 		),
 		'about'   => array(
