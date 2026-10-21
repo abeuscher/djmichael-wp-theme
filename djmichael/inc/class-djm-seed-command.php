@@ -19,6 +19,9 @@ class DJM_Seed_Command {
 	/** @var array<string,array> Field group fields by location value (block name or "options"). */
 	private $fields = array();
 
+	/** @var array<string,int> Page slug => page ID. */
+	private $pages = array();
+
 	/**
 	 * Build or refresh the site's content.
 	 *
@@ -45,10 +48,19 @@ class DJM_Seed_Command {
 		$this->load_fields();
 		$this->import_media( $content['media'], rtrim( $dir, '/' ), ! empty( $assoc_args['skip-media'] ) );
 
-		$page_ids = array();
+		// Permalinks first: "@page:<slug>" values are resolved with get_permalink()
+		// while pages are written, so the structure has to be in place by then.
+		update_option( 'permalink_structure', '/%postname%/' );
+
+		// Every page exists before any content is written, so a block on one page
+		// can link to another page that comes later in the list.
 		foreach ( $content['pages'] as $slug => $page ) {
-			$page_ids[ $slug ] = $this->upsert_page( $slug, $page );
+			$this->pages[ $slug ] = $this->reserve_page( $slug, $page['title'] );
 		}
+		foreach ( $content['pages'] as $slug => $page ) {
+			$this->upsert_page( $slug, $page );
+		}
+		$page_ids = $this->pages;
 
 		$options = $content['options'];
 		if ( isset( $page_ids['contact'] ) ) {
@@ -63,7 +75,6 @@ class DJM_Seed_Command {
 			update_option( 'show_on_front', 'page' );
 			update_option( 'page_on_front', $page_ids['home'] );
 		}
-		update_option( 'permalink_structure', '/%postname%/' );
 		flush_rewrite_rules( false );
 
 		WP_CLI::success( sprintf( 'Seeded %d pages and %d media items.', count( $page_ids ), count( $this->media ) ) );
@@ -143,6 +154,28 @@ class DJM_Seed_Command {
 	}
 
 	/**
+	 * Find a page by slug, creating an empty one if it doesn't exist yet.
+	 *
+	 * @param string $slug  Page slug.
+	 * @param string $title Page title.
+	 * @return int Page ID.
+	 */
+	private function reserve_page( $slug, $title ) {
+		$existing = get_page_by_path( $slug, OBJECT, 'page' );
+		if ( $existing ) {
+			return (int) $existing->ID;
+		}
+		return (int) wp_insert_post(
+			array(
+				'post_type'   => 'page',
+				'post_status' => 'publish',
+				'post_title'  => $title,
+				'post_name'   => $slug,
+			)
+		);
+	}
+
+	/**
 	 * Create or update a page by slug.
 	 *
 	 * @param string $slug Page slug.
@@ -155,17 +188,14 @@ class DJM_Seed_Command {
 			$markup .= $this->block_markup( $block[0], $block[1] ?? array() ) . "\n\n";
 		}
 
-		$existing = get_page_by_path( $slug, OBJECT, 'page' );
-		$postarr  = array(
+		$postarr = array(
+			'ID'           => $this->pages[ $slug ],
 			'post_type'    => 'page',
 			'post_status'  => 'publish',
 			'post_title'   => $page['title'],
 			'post_name'    => $slug,
 			'post_content' => trim( $markup ),
 		);
-		if ( $existing ) {
-			$postarr['ID'] = $existing->ID;
-		}
 		// wp_insert_post unslashes; block JSON contains backslashes.
 		$id = wp_insert_post( wp_slash( $postarr ), true );
 		if ( is_wp_error( $id ) ) {
@@ -173,7 +203,7 @@ class DJM_Seed_Command {
 		}
 
 		$this->write_fields( 'post_type:page', $page['seo'] ?? array(), $id );
-		WP_CLI::log( ( $existing ? 'Updated' : 'Created' ) . " page /$slug/ (#$id)" );
+		WP_CLI::log( "Wrote page /$slug/ (#$id)" );
 		return (int) $id;
 	}
 
@@ -237,6 +267,10 @@ class DJM_Seed_Command {
 	private function resolve( $value ) {
 		if ( is_string( $value ) && str_starts_with( $value, '@media:' ) ) {
 			return (string) ( $this->media[ substr( $value, 7 ) ] ?? '' );
+		}
+		if ( is_string( $value ) && str_starts_with( $value, '@page:' ) ) {
+			$id = $this->pages[ substr( $value, 6 ) ] ?? 0;
+			return $id ? get_permalink( $id ) : '';
 		}
 		if ( is_array( $value ) ) {
 			return array_map( array( $this, 'resolve' ), $value );

@@ -17,6 +17,10 @@ return array(
 			'file' => 'hero-couple-dancing.jpg',
 			'alt'  => 'A bride and groom dancing in a pool of warm light, surrounded by guests on a crowded dance floor',
 		),
+		'about_booth' => array(
+			'file' => 'fpo-michael-at-the-booth.jpg',
+			'alt'  => 'Michael at the DJ booth during a wedding reception',
+		),
 		'img_2109_poster' => array(
 			'file' => 'img-2109-poster.jpg',
 			'alt'  => 'Video: Guests with their hands up on a packed dance floor',
@@ -300,6 +304,37 @@ return array(
 								'image' => '@media:img_1612_poster',
 								'video' => '@media:img_1612',
 							),
+						),
+					),
+				),
+				array(
+					'acf/about-short',
+					array(
+						'image' => '@media:about_booth',
+						'title' => 'About Michael',
+						'text'  => "I've been DJing since a neighbor sold me his old gear for a high school dance. Twenty-five years and more than a thousand weddings later, I still prepare every one like it's the first. When you book DJ Michael, I'm the one who shows up.",
+						'stats' => array(
+							array(
+								'value' => '25',
+								'label' => 'years',
+							),
+							array(
+								'value' => '1,000+',
+								'label' => 'weddings',
+							),
+							array(
+								'value' => '286',
+								'label' => 'reviews',
+							),
+							array(
+								'value' => '2011',
+								'label' => 'Stanley Cup season with the Bruins',
+							),
+						),
+						'link'  => array(
+							'title'  => 'More about me',
+							'url'    => '@page:about',
+							'target' => '',
 						),
 					),
 				),
