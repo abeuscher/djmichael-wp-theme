@@ -22,6 +22,9 @@ class DJM_Seed_Command {
 	/** @var array<string,int> Page slug => page ID. */
 	private $pages = array();
 
+	/** @var array<string,int> Form seed key => Fluent Forms form ID. */
+	private $forms = array();
+
 	/**
 	 * Build or refresh the site's content.
 	 *
@@ -51,6 +54,8 @@ class DJM_Seed_Command {
 		// Permalinks first: "@page:<slug>" values are resolved with get_permalink()
 		// while pages are written, so the structure has to be in place by then.
 		update_option( 'permalink_structure', '/%postname%/' );
+
+		$this->build_forms( $content['forms'] ?? array() );
 
 		// Every page exists before any content is written, so a block on one page
 		// can link to another page that comes later in the list.
@@ -150,6 +155,23 @@ class DJM_Seed_Command {
 			update_post_meta( $id, '_wp_attachment_image_alt', $item['alt'] ?? '' );
 			$this->media[ $key ] = (int) $id;
 			WP_CLI::log( "Imported {$item['file']} (#$id)" );
+		}
+	}
+
+	/**
+	 * Create or refresh the Fluent Forms forms described in the seed.
+	 *
+	 * @param array $forms Seed key => form description.
+	 */
+	private function build_forms( $forms ) {
+		foreach ( $forms as $key => $form ) {
+			$id = DJM_Seed_Forms::upsert( $key, $form );
+			if ( is_wp_error( $id ) ) {
+				WP_CLI::warning( "Form \"$key\": " . $id->get_error_message() );
+				continue;
+			}
+			$this->forms[ $key ] = (int) $id;
+			WP_CLI::log( "Wrote form \"{$form['title']}\" (#$id)" );
 		}
 	}
 
@@ -267,6 +289,9 @@ class DJM_Seed_Command {
 	private function resolve( $value ) {
 		if ( is_string( $value ) && str_starts_with( $value, '@media:' ) ) {
 			return (string) ( $this->media[ substr( $value, 7 ) ] ?? '' );
+		}
+		if ( is_string( $value ) && str_starts_with( $value, '@form:' ) ) {
+			return (string) ( $this->forms[ substr( $value, 6 ) ] ?? '' );
 		}
 		if ( is_string( $value ) && str_starts_with( $value, '@page:' ) ) {
 			$id = $this->pages[ substr( $value, 6 ) ] ?? 0;

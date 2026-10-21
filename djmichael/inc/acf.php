@@ -67,3 +67,33 @@ add_action(
 		}
 	}
 );
+
+// The Contact block's form list comes from Fluent Forms, so the editor shows
+// form names rather than asking for an ID.
+add_filter(
+	'acf/load_field/key=field_djm_contact_form',
+	function ( $field ) {
+		if ( ! function_exists( 'wpFluent' ) ) {
+			return $field;
+		}
+		$forms = wpFluent()->table( 'fluentform_forms' )
+			->select( array( 'id', 'title' ) )
+			->orderBy( 'id' )
+			->get();
+
+		// wpFluent returns its own collection object, not a plain array.
+		if ( is_object( $forms ) && method_exists( $forms, 'all' ) ) {
+			$forms = $forms->all();
+		}
+
+		foreach ( (array) $forms as $form ) {
+			$row = (array) $form;
+			if ( empty( $row['id'] ) ) {
+				continue;
+			}
+			$id                      = (int) $row['id'];
+			$field['choices'][ $id ] = ( $row['title'] ?? '' ) . ' (#' . $id . ')';
+		}
+		return $field;
+	}
+);

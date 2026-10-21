@@ -198,6 +198,80 @@ return array(
 		'ga4_id'           => 'G-7Y08SVNRHQ',
 	),
 
+	'forms'   => array(
+		'contact' => array(
+			'title'        => 'Contact',
+			'submit'       => 'Send',
+			'confirmation' => "Thanks. I'll reply by email soon.",
+			'notification' => array(
+				'to'       => '{wp.admin_email}',
+				'reply_to' => '{inputs.email}',
+				'subject'  => 'New enquiry from djmichael.com',
+				'message'  => '<p>{all_data}</p>',
+			),
+			'fields'       => array(
+				array(
+					'type'         => 'text',
+					'name'         => 'names',
+					'label'        => 'Your names',
+					'required'     => true,
+					'autocomplete' => 'name',
+				),
+				array(
+					'type'     => 'email',
+					'name'     => 'email',
+					'label'    => 'Email',
+					'required' => true,
+				),
+				array(
+					'type'     => 'date',
+					'name'     => 'event_date',
+					'label'    => 'Event date',
+					'required' => true,
+				),
+				array(
+					'type'        => 'select',
+					'name'        => 'event_type',
+					'label'       => 'Event type',
+					'required'    => true,
+					'placeholder' => 'Choose one',
+					'options'     => array( 'Wedding', 'Corporate', 'Private event', 'Other' ),
+				),
+				array(
+					'type'     => 'text',
+					'name'     => 'venue',
+					'label'    => 'Venue or town',
+					'optional' => true,
+				),
+				array(
+					'type'     => 'number',
+					'name'     => 'guests',
+					'label'    => 'Approximate guest count',
+					'optional' => true,
+					'min'      => 1,
+					'step'     => 1,
+				),
+				array(
+					'type'        => 'select',
+					'name'        => 'source',
+					'label'       => 'How did you hear about me?',
+					'optional'    => true,
+					'full'        => true,
+					'placeholder' => 'Choose one',
+					'options'     => array( 'WeddingWire', 'The Knot', 'Yelp', 'Zola', 'Google', 'Instagram', 'Friend or family', 'Venue or vendor', 'Other' ),
+				),
+				array(
+					'type'     => 'textarea',
+					'name'     => 'message',
+					'label'    => 'Message',
+					'optional' => true,
+					'full'     => true,
+					'rows'     => 5,
+				),
+			),
+		),
+	),
+
 	'pages'   => array(
 		'home'    => array(
 			'title'  => 'Home',
@@ -399,6 +473,13 @@ return array(
 						),
 					),
 				),
+				array(
+					'acf/contact-block',
+					array(
+						'title' => 'Contact me',
+						'form'  => '@form:contact',
+					),
+				),
 			),
 		),
 		'about'   => array(
@@ -537,6 +618,12 @@ return array(
 					array(
 						'title' => 'Contact me',
 						'intro' => "Tell me about your date and venue, and I'll get back to you, usually within a day.",
+					),
+				),
+				array(
+					'acf/contact-block',
+					array(
+						'form' => '@form:contact',
 					),
 				),
 			),
