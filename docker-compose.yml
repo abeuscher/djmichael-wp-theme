@@ -1,0 +1,57 @@
+# Local development: WordPress (PHP 8.2, matches SiteGround), MariaDB, WP-CLI and Mailpit.
+# First run: bin/setup.sh. Site: http://localhost:8080  Mail: http://localhost:8025
+
+x-wp-env: &wp-env
+  WORDPRESS_DB_HOST: db
+  WORDPRESS_DB_NAME: wordpress
+  WORDPRESS_DB_USER: wordpress
+  WORDPRESS_DB_PASSWORD: wordpress
+
+x-wp-volumes: &wp-volumes
+  - wp:/var/www/html
+  - ./djmichael:/var/www/html/wp-content/themes/djmichael
+  - ./plugins/advanced-custom-fields-pro:/var/www/html/wp-content/plugins/advanced-custom-fields-pro
+  - ./dev/mu-plugins:/var/www/html/wp-content/mu-plugins
+  - ./seed/media:/var/www/html/wp-content/djm-seed/media:ro
+
+services:
+  db:
+    image: mariadb:11.4
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: wordpress
+      MARIADB_ROOT_PASSWORD: root
+    volumes:
+      - db:/var/lib/mysql
+
+  wordpress:
+    image: wordpress:php8.2-apache
+    depends_on: [db]
+    ports:
+      - "${WP_PORT:-8080}:80"
+    environment:
+      <<: *wp-env
+      WORDPRESS_CONFIG_EXTRA: |
+        define( 'WP_ENVIRONMENT_TYPE', 'local' );
+        define( 'WP_DEBUG', true );
+        define( 'WP_DEBUG_LOG', true );
+        define( 'WP_DEBUG_DISPLAY', false );
+    volumes: *wp-volumes
+
+  cli:
+    image: wordpress:cli-php8.2
+    user: "33:33"
+    depends_on: [db, wordpress]
+    environment: *wp-env
+    volumes: *wp-volumes
+    profiles: [cli]
+
+  mailpit:
+    image: axllent/mailpit
+    ports:
+      - "${MAIL_PORT:-8025}:8025"
+
+volumes:
+  db:
+  wp:

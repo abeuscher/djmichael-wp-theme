@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "acf/hero",
+	"title": "Hero",
+	"description": "Full-width banner with the page title and the main button.",
+	"category": "djmichael",
+	"icon": "cover-image",
+	"keywords": [ "banner", "header" ],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"supports": {
+		"anchor": true,
+		"align": false,
+		"html": false,
+		"multiple": false
+	}
+}

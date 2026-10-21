@@ -1,0 +1,3 @@
+/* Editor only: the site's base styles assume a page body; keep previews readable. */
+.editor-styles-wrapper { background: var(--paper); font-family: var(--font-text); }
+.editor-styles-wrapper .site-header { position: static; }
