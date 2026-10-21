@@ -1,0 +1,53 @@
+{
+    "key": "group_djm_block_page_head",
+    "title": "Block: Page head",
+    "fields": [
+        {
+            "key": "field_djm_page_head_title",
+            "label": "Heading",
+            "name": "title",
+            "type": "text",
+            "instructions": "Leave empty to use the page's title.",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_djm_page_head_intro",
+            "label": "Introduction",
+            "name": "intro",
+            "type": "textarea",
+            "instructions": "Optional. One short line under the heading.",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 2,
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/page-head"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1761000000
+}

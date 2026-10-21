@@ -55,3 +55,37 @@ function djm_icon( $name ) {
 function djm_new_tab_label() {
 	return '<span class="visually-hidden"> ' . esc_html__( '(opens in a new tab)', 'djmichael' ) . '</span>';
 }
+
+/**
+ * The <dl class="stats"> list shared by the About blocks.
+ *
+ * @param array  $rows  Repeater rows with "label" and "value".
+ * @param string $class Extra class for the list.
+ */
+function djm_stats( $rows, $class = '' ) {
+	$rows = array_filter( (array) $rows, 'is_array' );
+	if ( ! $rows ) {
+		return '';
+	}
+	$out = '<dl class="stats' . ( $class ? ' ' . esc_attr( $class ) : '' ) . '">';
+	foreach ( $rows as $row ) {
+		if ( empty( $row['label'] ) && empty( $row['value'] ) ) {
+			continue;
+		}
+		$out .= '<div class="stats__item">';
+		$out .= '<dt class="stats__label">' . esc_html( $row['label'] ?? '' ) . '</dt>';
+		$out .= '<dd class="stats__value">' . esc_html( $row['value'] ?? '' ) . '</dd>';
+		$out .= '</div>';
+	}
+	return $out . '</dl>';
+}
+
+/**
+ * A URL as link text, the way the prototype shows it: no scheme, no
+ * trailing slash. "https://example.com/path/" becomes "example.com/path".
+ *
+ * @param string $url Full URL.
+ */
+function djm_link_label( $url ) {
+	return rtrim( preg_replace( '#^https?://#i', '', (string) $url ), '/' );
+}

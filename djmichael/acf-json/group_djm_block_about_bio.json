@@ -1,0 +1,124 @@
+{
+    "key": "group_djm_block_about_bio",
+    "title": "Block: About (biography)",
+    "fields": [
+        {
+            "key": "field_djm_about_bio_photo",
+            "label": "Lead photo",
+            "name": "photo",
+            "type": "image",
+            "instructions": "Michael at the booth. Portrait crop reads best.",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg, jpeg, png, webp, avif, svg"
+        },
+        {
+            "key": "field_djm_about_bio_support",
+            "label": "Supporting photo",
+            "name": "support_photo",
+            "type": "image",
+            "instructions": "Wide photo below the numbers.",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg, jpeg, png, webp, avif"
+        },
+        {
+            "key": "field_djm_about_bio_bio",
+            "label": "Biography",
+            "name": "bio",
+            "type": "wysiwyg",
+            "instructions": "The story, in paragraphs.",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_djm_about_bio_stats",
+            "label": "Numbers",
+            "name": "stats",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "button_label": "Add number",
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_djm_about_bio_stat_value",
+                    "label": "Value",
+                    "name": "value",
+                    "type": "text",
+                    "instructions": "e.g. 1,000+",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_djm_about_bio_stats"
+                },
+                {
+                    "key": "field_djm_about_bio_stat_label",
+                    "label": "Label",
+                    "name": "label",
+                    "type": "text",
+                    "instructions": "e.g. weddings",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_djm_about_bio_stats"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/about-bio"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1761000000
+}

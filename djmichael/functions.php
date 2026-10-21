@@ -16,7 +16,9 @@ require DJM_DIR . '/inc/assets.php';
 require DJM_DIR . '/inc/acf.php';
 require DJM_DIR . '/inc/template-tags.php';
 require DJM_DIR . '/inc/head.php';
+require DJM_DIR . '/inc/fluent-forms.php';
 
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
+	require DJM_DIR . '/inc/class-djm-seed-forms.php';
 	require DJM_DIR . '/inc/class-djm-seed-command.php';
 }

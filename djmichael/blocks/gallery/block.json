@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "acf/gallery",
+	"title": "Gallery and slideshow",
+	"description": "Grid of photos and video, with a slideshow. The first few show as tiles; the rest open from \"View all\".",
+	"category": "djmichael",
+	"icon": "format-gallery",
+	"keywords": [ "photos", "video", "slideshow", "lightbox" ],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"supports": {
+		"anchor": true,
+		"align": false,
+		"html": false,
+		"multiple": false
+	}
+}

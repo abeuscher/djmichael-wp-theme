@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "acf/what-to-expect",
+	"title": "What to expect",
+	"description": "Numbered steps from first contact to the dance floor.",
+	"category": "djmichael",
+	"icon": "editor-ol",
+	"keywords": [ "steps", "process", "how it works" ],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"supports": {
+		"anchor": true,
+		"align": false,
+		"html": false,
+		"multiple": false
+	}
+}
