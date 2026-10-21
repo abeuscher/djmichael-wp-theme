@@ -36,6 +36,10 @@ class DJM_Seed_Command {
 	 * [--skip-media]
 	 * : Reuse media already in the library; don't import.
 	 *
+	 * [--skip-options]
+	 * : Leave Site settings alone. Use this to refresh pages without losing
+	 * : edits made in the admin, which this command otherwise overwrites.
+	 *
 	 * ## EXAMPLES
 	 *
 	 *     wp djm seed
@@ -67,12 +71,16 @@ class DJM_Seed_Command {
 		}
 		$page_ids = $this->pages;
 
-		$options = $content['options'];
-		if ( isset( $page_ids['contact'] ) ) {
-			$options['contact_page'] = $page_ids['contact'];
+		if ( empty( $assoc_args['skip-options'] ) ) {
+			$options = $content['options'];
+			if ( isset( $page_ids['contact'] ) ) {
+				$options['contact_page'] = $page_ids['contact'];
+			}
+			$this->write_fields( 'options', $options, 'options' );
+			WP_CLI::log( 'Site settings written.' );
+		} else {
+			WP_CLI::log( 'Site settings left as they are.' );
 		}
-		$this->write_fields( 'options', $options, 'options' );
-		WP_CLI::log( 'Site settings written.' );
 
 		$this->build_menus( $content['menus'], $page_ids );
 

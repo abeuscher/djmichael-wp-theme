@@ -30,7 +30,9 @@ That starts the containers, installs WordPress, activates ACF Pro, Fluent Forms 
 Field values can point at the things the seed creates: `@media:<key>` becomes an
 attachment ID, `@page:<slug>` a page's permalink and `@form:<key>` a form ID.
 
-It's safe to rerun, and it overwrites page content and Site settings with the seed versions. Use it for local and staging builds; production is a copy of approved staging rather than a fresh seed.
+It's safe to rerun, and it overwrites page content and Site settings with the seed
+versions — so an edit made in Site settings is lost on the next run. Pass
+`--skip-options` to refresh the pages and leave Site settings alone. Use it for local and staging builds; production is a copy of approved staging rather than a fresh seed.
 
 Seeding exists because ACF stores image fields as attachment IDs inside block data, which the WordPress XML importer doesn't remap.
 
@@ -72,6 +74,6 @@ Review counts and the Contact band have no fields of their own: they read Site s
 
 Still open:
 - Review quotes in Testimonials are the prototype's placeholders, pending Michael's picks.
+- Zola is no longer listed in the review counts. To bring it back, add a row in Site settings → Reviews, and to the seed if it should survive a reseed.
 - The About photo is an FPO image.
-- Zola has no profile URL yet, so that review count isn't a link.
 - Fluent Forms' own "Contact Form Demo" and "Subscription Form" are still in the admin; delete them when convenient.

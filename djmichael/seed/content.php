@@ -185,12 +185,6 @@ return array(
 				'count'    => 78,
 				'url'      => 'http://www.yelp.com/biz/michael-o-neill-boston',
 			),
-			array(
-				'platform' => 'Zola',
-				'rating'   => '5.0',
-				'count'    => 3,
-				'url'      => '', // TODO: profile URL from the client.
-			),
 		),
 		'award_value'      => '16 years',
 		'award_label'      => "Couples' Choice Award",
