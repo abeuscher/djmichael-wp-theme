@@ -407,7 +407,14 @@ return array(
 				'seo_title'       => "About Michael O'Neill | DJ Michael",
 				'seo_description' => "From a high school dance to the Bruins' Stanley Cup season to 1,000+ weddings: the story behind DJ Michael.",
 			),
-			'blocks' => array(),
+			'blocks' => array(
+				array(
+					'acf/page-head',
+					array(
+						'title' => 'About Michael',
+					),
+				),
+			),
 		),
 		'faq'     => array(
 			'title'  => 'FAQ',
@@ -415,7 +422,14 @@ return array(
 				'seo_title'       => 'FAQ | DJ Michael, Wedding DJ',
 				'seo_description' => 'Booking, music, equipment and the wedding day: answers to the questions couples ask DJ Michael most.',
 			),
-			'blocks' => array(),
+			'blocks' => array(
+				array(
+					'acf/page-head',
+					array(
+						'title' => 'Frequently asked questions',
+					),
+				),
+			),
 		),
 		'contact' => array(
 			'title'  => 'Contact',
@@ -423,7 +437,15 @@ return array(
 				'seo_title'       => 'Contact DJ Michael | Wedding DJ in Boston and Portland, Maine',
 				'seo_description' => "Tell DJ Michael about your wedding or event. He'll reply by email, usually within a day.",
 			),
-			'blocks' => array(),
+			'blocks' => array(
+				array(
+					'acf/page-head',
+					array(
+						'title' => 'Contact me',
+						'intro' => "Tell me about your date and venue, and I'll get back to you, usually within a day.",
+					),
+				),
+			),
 		),
 		'vendors' => array(
 			'title'  => 'Preferred vendors',
@@ -431,7 +453,15 @@ return array(
 				'seo_title'       => 'Preferred vendors | DJ Michael',
 				'seo_description' => 'Wedding planners, photographers, venues and more that DJ Michael works with often and recommends.',
 			),
-			'blocks' => array(),
+			'blocks' => array(
+				array(
+					'acf/page-head',
+					array(
+						'title' => 'Preferred vendors',
+						'intro' => 'People I work with often and recommend without hesitation.',
+					),
+				),
+			),
 		),
 	),
 
