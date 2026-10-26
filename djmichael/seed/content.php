@@ -160,7 +160,7 @@ return array(
 		'owner_name'       => "Michael O'Neill",
 		'tagline'          => 'Wedding DJ · Boston and Portland, ME',
 		'location'         => 'Boston and Portland, ME',
-		'email'            => 'michael@djmichael.com',
+		'email'            => 'info@djmichael.com',
 		'instagram_handle' => '@djmichaelo',
 		'instagram_url'    => 'https://www.instagram.com/djmichaelo/',
 		'areas_served'     => "Greater Boston, Massachusetts\nPortland, Maine\nNew England",
@@ -198,7 +198,7 @@ return array(
 			'submit'       => 'Send',
 			'confirmation' => "Thanks. I'll reply by email soon.",
 			'notification' => array(
-				'to'       => '{wp.admin_email}',
+				'to'       => 'info@djmichael.com',
 				'reply_to' => '{inputs.email}',
 				'subject'  => 'New enquiry from djmichael.com',
 				'message'  => '<p>{all_data}</p>',

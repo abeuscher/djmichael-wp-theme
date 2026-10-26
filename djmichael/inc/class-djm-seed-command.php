@@ -37,8 +37,7 @@ class DJM_Seed_Command {
 	 * : Reuse media already in the library; don't import.
 	 *
 	 * [--skip-options]
-	 * : Leave Site settings alone. Use this to refresh pages without losing
-	 * : edits made in the admin, which this command otherwise overwrites.
+	 * : Leave Site settings alone, keeping edits made in the admin, which this command otherwise overwrites.
 	 *
 	 * ## EXAMPLES
 	 *
