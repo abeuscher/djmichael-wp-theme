@@ -58,6 +58,14 @@ dev/mu-plugins/      Local-only helpers (mail to Mailpit)
 
 Pages only accept this theme's blocks (`allowed_block_types_all` in `inc/setup.php`).
 
+## Production (SiteGround)
+
+The live site is `~/www/djmichael.com/public_html` on SiteGround (SSH port 18765, WP-CLI available). It was switched over from the old `dj` theme in place on 2026-10-26 with `bin/cutover.sh`: database dump, maintenance mode, https URLs, plugin and theme swap, seed, cache purge. It took about 30 seconds. The cutover only adds files, so `bin/rollback.sh <dump>` undoes it by restoring that dump.
+
+`rehearsal/` runs a SiteGround backup (`djm-db.sql.gz` + `djm-files.tar.gz`) locally on http://localhost:8091, so a script can be tried against a copy of live first: `rehearsal/load.sh`, then the commands in each script's header.
+
+SiteGround's page cache isn't purged when Site settings are saved. After changing them, run `wp sg purge` or use "Purge SG Cache" in the admin bar.
+
 ## Status
 
 All of the prototype's sections are ported. Each is a block in `djmichael/blocks/`, with its field group in `djmichael/acf-json/` and its content in `djmichael/seed/content.php`.
