@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "acf/about-short",
+	"title": "About (short)",
+	"description": "Photo, a short introduction, the headline numbers and a link to the About page.",
+	"category": "djmichael",
+	"icon": "admin-users",
+	"keywords": [ "about", "bio", "intro" ],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"supports": {
+		"anchor": true,
+		"align": false,
+		"html": false,
+		"multiple": false
+	}
+}

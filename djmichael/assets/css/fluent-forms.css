@@ -1,0 +1,166 @@
+/* --------------------------------------------------------------------------
+   Fluent Forms, restyled to the prototype's contact form.
+
+   Fluent Forms renders its own markup, so instead of the prototype's
+   .field / .field__label / .field__input classes we style the plugin's
+   equivalents: .ff-el-group is the field wrapper, .ff-el-input--label holds
+   the label and .ff-el-form-control is the control. Each field carries
+   "field" (and "field--full") as its container class from the seed, so the
+   grid behaves as the prototype's does.
+
+   Everything is scoped to .contact-block so nothing leaks into other forms.
+   -------------------------------------------------------------------------- */
+
+/* Fluent Forms' own wrapper adds nothing we want. */
+.contact-block .fluentform,
+.contact-block .frm-fluent-form {
+  margin: 0;
+}
+
+/* The fieldset is the direct parent of the field groups, so it carries the
+   grid. Its inline styles only cover borders and spacing, not display. */
+.contact-block .frm-fluent-form fieldset {
+  display: grid;
+  gap: var(--s-3);
+}
+
+@media (min-width: 40em) {
+  .contact-block .frm-fluent-form fieldset {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* A field: label above control, like .field in the prototype. */
+.contact-block .ff-el-group {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  margin: 0;
+}
+
+.contact-block .ff-el-group.field--full,
+.contact-block .ff_submit_btn_wrapper {
+  grid-column: 1 / -1;
+}
+
+/* Labels; .field__optional inside them is styled by site.css. */
+.contact-block .ff-el-input--label {
+  margin: 0;
+}
+
+.contact-block .ff-el-input--label label {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+/* No required asterisks: the prototype marks the optional fields instead. */
+.contact-block .ff-el-is-required > label::after,
+.contact-block .ff-el-input--label.asterisk-left label::before,
+.contact-block .ff-el-input--label.asterisk-right label::after {
+  content: none;
+}
+
+.contact-block .ff-el-input--content {
+  margin: 0;
+}
+
+/* Controls, matching .field__input. */
+.contact-block .ff-el-form-control {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.625rem 0.875rem;
+  font: 400 1rem / 1.4 var(--font-text);
+  color: var(--text);
+  background: var(--white);
+  border: 1px solid var(--gray-500);
+  border-radius: var(--radius);
+  box-shadow: none;
+  appearance: none;
+}
+
+.contact-block .ff-el-form-control:focus,
+.contact-block .ff-el-form-control:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 0;
+  border-color: var(--black);
+  box-shadow: none;
+}
+
+/* Dropdowns get the prototype's chevron. */
+.contact-block select.ff-el-form-control {
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23141413' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.875rem center;
+}
+
+.contact-block textarea.ff-el-form-control {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+/* Errors, matching .field__error. */
+.contact-block .ff-el-form-control[aria-invalid="true"] {
+  border-color: var(--error);
+  box-shadow: inset 0 0 0 1px var(--error);
+}
+
+.contact-block .ff-el-is-error .text-danger,
+.contact-block .error.text-danger,
+.contact-block .ff-el-form-check-error {
+  margin-top: 2px;
+  font-size: var(--fs-small);
+  color: var(--error);
+}
+
+/* The submit button already carries btn btn--primary btn--large from the
+   seed; these rules remove what Fluent Forms adds on top. The selector is
+   deliberately specific enough to beat the colour the plugin prints inline. */
+.contact-block form.frm-fluent-form button.ff-btn-submit,
+.contact-block form.frm-fluent-form button.ff-btn-submit:not(.ff_btn_no_style) {
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.contact-block form.frm-fluent-form button.ff-btn-submit:hover {
+  background-color: var(--orange);
+  color: var(--black);
+}
+
+.contact-block .ff_submit_btn_wrapper {
+  margin-top: var(--s-4);
+}
+
+/* Fluent Forms' loading overlay and its "powered by" line aren't wanted. */
+.contact-block .ff-el-progress,
+.contact-block .ff_form_instance_powered_by,
+.contact-block .ff-powered-by {
+  display: none;
+}
+
+/* The confirmation message, matching .contact-form__success. */
+.contact-block .ff-message-success {
+  padding: var(--s-4) 0;
+  border-top: 2px solid var(--orange);
+  border-bottom: 0;
+  background: none;
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  color: var(--text);
+}
+
+/* The stacked error list below the form. */
+.contact-block .ff-errors-in-stack .error {
+  margin-top: var(--s-2);
+  font-size: var(--fs-small);
+  color: var(--error);
+}

@@ -1,0 +1,101 @@
+{
+    "key": "group_djm_block_vendors",
+    "title": "Block: Vendors",
+    "fields": [
+        {
+            "key": "field_djm_vendors_items",
+            "label": "Vendors",
+            "name": "items",
+            "type": "repeater",
+            "instructions": "The link text is the address without \"https://\".",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "button_label": "Add vendor",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_djm_vendors_item_name",
+            "sub_fields": [
+                {
+                    "key": "field_djm_vendors_item_category",
+                    "label": "What they do",
+                    "name": "category",
+                    "type": "text",
+                    "instructions": "e.g. Planning, Photography",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_djm_vendors_items"
+                },
+                {
+                    "key": "field_djm_vendors_item_name",
+                    "label": "Name",
+                    "name": "name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_djm_vendors_items"
+                },
+                {
+                    "key": "field_djm_vendors_item_place",
+                    "label": "Place",
+                    "name": "place",
+                    "type": "text",
+                    "instructions": "Optional, for venues.",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_djm_vendors_items"
+                },
+                {
+                    "key": "field_djm_vendors_item_url",
+                    "label": "Website",
+                    "name": "url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_djm_vendors_items"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/vendors"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1761000000
+}

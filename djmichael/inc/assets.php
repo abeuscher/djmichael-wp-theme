@@ -15,6 +15,13 @@ add_action(
 		wp_enqueue_style( 'djm-site', DJM_URI . '/assets/css/site.css', array( 'djm-tokens' ), $ver );
 		wp_enqueue_script( 'djm-site', DJM_URI . '/assets/js/site.js', array(), $ver, array( 'strategy' => 'defer' ) );
 
+		// Only pages with the Contact block need the Fluent Forms restyling.
+		// Its selectors are scoped under .contact-block, which also keeps them
+		// ahead of the plugin's own rules whatever order they load in.
+		if ( is_singular() && has_block( 'acf/contact-block' ) ) {
+			wp_enqueue_style( 'djm-fluent-forms', DJM_URI . '/assets/css/fluent-forms.css', array( 'djm-site' ), $ver );
+		}
+
 		// Blocks are rendered server-side; the core block library CSS isn't used.
 		wp_dequeue_style( 'wp-block-library' );
 		wp_dequeue_style( 'global-styles' );

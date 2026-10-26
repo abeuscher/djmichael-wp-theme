@@ -1,0 +1,88 @@
+{
+    "key": "group_djm_block_what_to_expect",
+    "title": "Block: What to expect",
+    "fields": [
+        {
+            "key": "field_djm_wte_title",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "Leave empty for \"What to expect\".",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_djm_wte_steps",
+            "label": "Steps",
+            "name": "steps",
+            "type": "repeater",
+            "instructions": "Numbered automatically, in this order.",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "button_label": "Add step",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_djm_wte_step_title",
+            "sub_fields": [
+                {
+                    "key": "field_djm_wte_step_title",
+                    "label": "Step",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "e.g. Get in touch.",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_djm_wte_steps"
+                },
+                {
+                    "key": "field_djm_wte_step_text",
+                    "label": "Detail",
+                    "name": "text",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "rows": 3,
+                    "new_lines": "",
+                    "parent_repeater": "field_djm_wte_steps"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/what-to-expect"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1761000000
+}

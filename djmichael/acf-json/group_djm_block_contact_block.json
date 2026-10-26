@@ -1,0 +1,59 @@
+{
+    "key": "group_djm_block_contact_block",
+    "title": "Block: Contact block",
+    "fields": [
+        {
+            "key": "field_djm_contact_title",
+            "label": "Heading",
+            "name": "title",
+            "type": "text",
+            "instructions": "Leave empty on the Contact page, where the page head is the heading.",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_djm_contact_form",
+            "label": "Form",
+            "name": "form",
+            "type": "select",
+            "instructions": "The Fluent Forms form to show.",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": [],
+            "default_value": "",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/contact-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1761000000
+}

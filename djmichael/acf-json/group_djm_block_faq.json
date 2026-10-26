@@ -1,0 +1,77 @@
+{
+    "key": "group_djm_block_faq",
+    "title": "Block: FAQ",
+    "fields": [
+        {
+            "key": "field_djm_faq_items",
+            "label": "Questions",
+            "name": "items",
+            "type": "repeater",
+            "instructions": "The first one is open when the page loads. These also become the page's FAQ structured data.",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "button_label": "Add question",
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_djm_faq_item_question",
+            "sub_fields": [
+                {
+                    "key": "field_djm_faq_item_question",
+                    "label": "Question",
+                    "name": "question",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "parent_repeater": "field_djm_faq_items"
+                },
+                {
+                    "key": "field_djm_faq_item_answer",
+                    "label": "Answer",
+                    "name": "answer",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 1,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "tabs": "visual",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "parent_repeater": "field_djm_faq_items"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/faq"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1761000000
+}

@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "acf/contact-block",
+	"title": "Contact block",
+	"description": "The contact form with the email address, Instagram and the booking note beside it.",
+	"category": "djmichael",
+	"icon": "email",
+	"keywords": [ "contact", "form", "enquiry" ],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"supports": {
+		"anchor": true,
+		"align": false,
+		"html": false,
+		"multiple": false
+	}
+}
